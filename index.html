@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jatin - Developer Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,
+400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,
+700;1,800;1,900&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: #080f30;
+                color: white;
+                font-family: 'Space Grotesk', sans-serif;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 80px;
+                background-color: #0e1046;
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: center;
+
+            }
+
+            nav ul li {
+                list-style: none;
+                margin: 0 23px;
+
+            }
+
+            nav ul li a {
+                text-decoration: none;
+                color: aliceblue;
+            }
+
+            nav ul li a:hover {
+                color: rgb(152, 152, 252);
+                font-size: 1.02rem;
+
+            }
+
+            main hr {
+                border: 0;
+                background-color: #9c97f1;
+                height: 1.2px;
+                margin: 60px 84px;
+            }
+
+            .left {
+                font-size: 1.5rem;
+            }
+
+            .firstSection {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin: 130px 0;
+            }
+
+            .firstSection>div {
+                width: 30%;
+            }
+
+            .leftSection {
+                /* background-color: red; */
+                font-size: 3rem;
+
+                /* margin: 80px 0; */
+            }
+
+            .leftSection .buttons {
+                padding: 50px 0;
+            }
+
+
+            .btn-container {
+                display: flex;
+                gap: 15px;
+                /* Space between buttons */
+            }
+
+            .buttons {
+                display: flex;
+                gap: 20px;
+                /* Buttons ke beech ka gap */
+            }
+
+            .btn {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                /* Icon aur text ke beech ka gap */
+                text-decoration: none;
+                background-color: #007bff;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 5px;
+                /* transition: background 0.3s; */
+                font-size: 1rem;
+            }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+            }
+
+
+
+            .rightSection img {
+                width: 80%;
+                margin: 50px 0;
+            }
+
+            .purple {
+                color: rgb(172, 117, 223);
+            }
+
+            .text-grey {
+                color: gray;
+            }
+
+            #element {
+                color: rgb(172, 117, 223);
+            }
+
+            .secondsection {
+                max-width: 80vw;
+                margin: auto;
+                height: 80vh;
+            }
+
+            .secondsection h1 {
+                font-size: 2.9rem;
+            }
+
+            .secondsection .box {
+                background: white;
+                width: 75vw;
+                height: 2px;
+                margin: 70px 0;
+                display: flex;
+            }
+
+            .secondsection .vertical {
+                height: 93px;
+                width: 1px;
+                background-color: white;
+                margin: 0 170px;
+
+            }
+
+            .image-top {
+                width: 23px;
+                position: relative;
+                top: -32px;
+                left: -9px;
+
+            }
+
+            .vertical-title {
+                position: relative;
+                top: 75px;
+                width: 150px;
+                font-size: 30px;
+
+            }
+
+            .vertical-desc {
+                position: relative;
+                top: 86px;
+                color: gray;
+                width: 150px;
+                font-size: 18px;
+            }
+
+
+
+            .footer {
+                background: #0a0a0a;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+            }
+
+            .footer .container {
+                max-width: 900px;
+                margin: auto;
+            }
+
+            .footer-content h3 {
+                margin: 0;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .footer-content p {
+                margin: 5px 0;
+                font-size: 16px;
+            }
+
+            .social-icons {
+                margin-top: 10px;
+            }
+
+            .social-icons a {
+                color: white;
+                font-size: 20px;
+                margin: 0 10px;
+                transition: color 0.3s ease-in-out;
+            }
+
+            .social-icons a:hover {
+                color: #ffcc00;
+            }
+
+            .footer-bottom {
+                margin-top: 10px;
+                font-size: 14px;
+                opacity: 0.7;
+            }
+
+
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            section {
+                scroll-margin-top: 80px;
+                /* Navbar ke height ke barabar margin */
+
+            }
+
+            #welcome-screen {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 2.5rem;
+                font-weight: bold;
+                z-index: 1000;
+                transition: opacity 1s ease-out;
+            }
+
+            #welcome-screen .highlight {
+                color: #ffeb3b;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Background Gradient Animation */
+            @keyframes backgroundAnimation {
+                0% {
+                    background: #0f0c29;
+                }
+
+                50% {
+                    background: #302b63;
+                }
+
+                100% {
+                    background: #24243e;
+                }
+            }
+
+            #home {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 5vh;
+                text-align: center;
+                background: #0f0c29;
+                animation: backgroundAnimation 5s infinite alternate;
+            }
+
+            /* Text Glow Animation */
+            @keyframes glowingText {
+                0% {
+                    color: #ff5733;
+                    text-shadow: 0px 0px 10px #ff5733;
+                }
+
+                25% {
+                    color: #ffc300;
+                    text-shadow: 0px 0px 10px #ffc300;
+                }
+
+                50% {
+                    color: #33ff57;
+                    text-shadow: 0px 0px 10px #33ff57;
+                }
+
+                75% {
+                    color: #3385ff;
+                    text-shadow: 0px 0px 10px #3385ff;
+                }
+
+                100% {
+                    color: #ff33a6;
+                    text-shadow: 0px 0px 10px #ff33a6;
+                }
+            }
+
+            #home h2 {
+                font-size: 3rem;
+                font-weight: bold;
+                animation: glowingText 5s infinite alternate;
+            }
+
+            /* Floating Animation */
+            @keyframes floating {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            #home p {
+                font-size: 1.5rem;
+                color: white;
+                animation: floating 3s infinite ease-in-out;
+            }
+
+            body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+
+
+.section {
+    display: none; /* Initially hide sections */
+    padding: 50px;
+    text-align: center;
+    background-color: #0e1046;
+    color: white;
+    font-family: 'Poppins', sans-serif;  /* Stylish Font */
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+.section.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    color: #ffcc00; /* Stylish Yellow */
+}
+
+
+.heading {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffcc00; /* Default Yellow */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section:hover .heading {
+    transform: scale(1.1);
+    color: #ffcc00;
+}
+
+.content {
+    display: block; /* Always visible */
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+        </style>
+    </head>
+
+     <script>
+        function showSection(sectionId) {
+            // Hide all sections first
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Show the selected section
+            let activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.style.display = 'block';
+            }
+        }
+
+        // Show the Home section by default when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            showSection('home');  // Ensure Home is visible on load
+        });
+     </script>
+
+
+     <script>
+        setTimeout(() => {
+            document.getElementById('welcome-screen').style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById('welcome-screen').style.display = "none";
+            }, 1000);
+        }, 2500);
+
+        document.querySelectorAll('.section').forEach(section => {
+    section.addEventListener('click', () => {
+        let content = section.querySelector('.content');
+        if (content.style.display === "block") {
+            gsap.to(content, { opacity: 0, scale: 0.9, duration: 0.5, onComplete: () => content.style.display = "none" });
+        } else {
+            content.style.display = "block";
+            gsap.fromTo(content, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5 });
+        }
+    });
+});
+
+    </script>
+    
+
+    <body>
+        <div id="welcome-screen">
+            <h1>Welcome to <span class="highlight">Jatin's Portfolio</span></h1>
+        </div>
+
+        <header>
+            <nav>
+                <div class="left">Jatin's Portfolio</div>
+                <div class="right">
+
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick="showSection('home')">Home</a></li>
+                        <li><a href="javascript:void(0);" onclick="showSection('about')">About</a></li>
+                        <li><a href="javascript:void(0);" onclick="showSection('services')">Services</a></li>
+                        <li><a href="javascript:void(0);" onclick="showSection('projects')">Projects</a></li>
+                        <li><a href="javascript:void(0);" onclick="showSection('contact')">Contact Me</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+
+        <section id="home" class="section active">
+            <h2>Welcome to My Portfolio</h2>
+            <!-- <p>This is the Home section.</p> -->
+        </section>
+
+        <div id="about" class="section">
+            <h2 class="heading">About Me</h2>
+            <div class="content">
+                <p>Hi, I’m Jatin Singh Solanki, a Python developer eager to explore and grow in the world of programming.</p>
+                <p>As a fresher, I have a strong foundation in Python, Django, Flask, and SQL and enjoy building </p>
+                <p>web applications and solving real-world problems.</p>
+                <p>With a keen interest in database management, debugging, and problem-solving, </p>
+                <p>I am continuously learning and improving my skills.</p>
+                <p>My internships and projects have helped me gain practical experience,</p>
+                <p>and I’m excited to contribute and learn more in a professional environment.</p>
+                <p> Looking forward to new opportunities where I can apply my skills and grow as a developer</p>
+            </div>
+        </div>
+        
+        <section class="section" id="services">
+            <h2 class="heading">Services</h2>
+            <div class="content">
+                <p>Web Development: Building scalable and secure web applications using Django and Flask.</p>
+                <p>Database Management: Designing and managing databases efficiently using SQL.</p>
+                <p>Python Programming: Writing clean, maintainable, and efficient Python code for various applications.</p>
+                <p>Debugging & Problem-Solving: Identifying and fixing bugs to optimize performance.</p>
+                <p>Automation: Creating Python scripts to automate repetitive tasks and enhance productivity.</p>
+            </div>
+        </section>
+        
+        <section class="section" id="projects">
+            <h2 class="heading">Projects</h2>
+            <div class="content">
+                <p>Notepad (Tkinter): A simple text editor using Python’s Tkinter library.</p>
+                <p>Django Bookshelf: A web application for managing and cataloging books.</p>
+                <p>Django User Table: A user management system where users can input their details and store them in a database.</p>
+            </div>
+        </section>
+        
+        <section class="section" id="contact">
+            <h2 class="heading">Contact</h2>
+            <div class="content">
+                <p>📞 Phone: 7806088835</p>
+                <p> 📧 Email: jatinsinghsolanki46@gmail.com</p>
+                <p>📍 Location: Scheme 95, Vijay Nagar, Indore</p>
+                <p>🌐 GitHub: [https://github.com/Jatin-Singh-Solanki]</p>
+                <p> 🔗 LinkedIn: [https://www.linkedin.com/in/jatin-singh-solanki-aa385328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app]</p>
+            </div>
+        </section>
+
+
+
+        <main>
+            <section class="firstSection">
+
+                <div class="leftSection">
+                    Hi, My name is <div><span class='purple'>Jatin Singh Solanki</span></div>
+                    <div>And I'm a passionate </div>
+                    <span id="element"></span>
+                    <div class="buttons">
+
+                        <div class="buttons">
+                            <a href="resume.pdf" download class="btn">
+                                <img src="Jatin-Singh-resume.png.jpeg" alt="Download" class="icon"> Download Resume
+                            </a>
+                            <a href="https://github.com/Jatin-Singh-Solanki" target="_blank" class="btn">
+                                <img src="github.png" alt="GitHub" class="icon"> Visit GitHub
+                            </a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <div class="rightSection">
+                    <img src="python_developer.png" alt="">
+                </div>
+
+
+            </section>
+
+            <hr>
+
+            <section class="secondsection">
+                <span class="text-grey"> What I have done so far</span>
+                <h1>🏆 Work Experience</h1>
+
+                <div class="box">
+                    <div class="vertical">
+                        <img class="image-top" src="thoughtwin.logo.jpg" alt="">
+                        <div class="vertical-title">
+                            Python Developer Internship (2024)
+                        </div>
+                        <div class="vertical-desc">
+                            Three months Internship at ThoughtWin IT Solutions, worked on backend development using
+                            Django.
+                        </div>
+                    </div>
+
+                    <div class="vertical">
+                        <img class="image-top" src="python.logo.png" alt="">
+                        <div class="vertical-title">
+                            UnlizTech Online Internship (2024)
+                        </div>
+                        <div class="vertical-desc">
+                            One-month internship focused on web development and Python projects.
+                        </div>
+                    </div>
+
+                    <div class="vertical">
+                        <img class="image-top" src="django.logo.png" alt="">
+                        <div class="vertical-title">
+                            Django Developer (Projects)
+                        </div>
+                        <div class="vertical-desc">
+                            Built multiple Django projects like a Bookstore App, User Table Management, and a Notepad
+                            using Tkinter.
+                        </div>
+                    </div>
+
+                    <div class="vertical">
+                        <img class="image-top" src="sql.logo.png" alt="">
+                        <div class="vertical-title">
+                            Database Management
+                        </div>
+                        <div class="vertical-desc">
+                            Experienced in handling data using SQL and database management for scalable applications.
+                        </div>
+                    </div>
+
+
+                    <div class="vertical">
+                        <img class="image-top" src="programming and dubbing.logo.webp" alt="">
+                        <div class="vertical-title">
+                            Programming & Debugging
+                        </div>
+                        <div class="vertical-desc">
+                            Strong in Python programming, problem-solving, and debugging real-world applications.
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script>
+            var typed = new Typed('#element', {
+                strings: ['Python Developer', 'Django Developer', 'Web Developer', 'Video Editor'],
+                typeSpeed: 50,
+                backSpeed: 40,
+                startDelay: 2000,
+                backDelay: 3000,
+                loop: true
+            });
+        </script>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <h3>Jatin's Developer Portfolio</h3>
+                    <p>Follow me on social media</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/jatin_26.01" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1BTzSBNghs/?mibextid=qi2Omg" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/jatin-singh-solanki-aa385328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <p class="footer-bottom">© 2025 Jatin Singh Solanki. All rights reserved.</p>
+            </div>
+
+        </footer>
+
+    </body>
+
+</html>
